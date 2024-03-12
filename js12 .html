@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move Image on Mouseover</title>
+  <style>
+    /* Add some styling if needed */
+    #movingImage {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      transition: transform 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<img id="movingImage" src="arw1.2.webp" alt="Moving Image" onmouseover="moveImage()">
+
+<script>
+  function moveImage() {
+    var image = document.getElementById('movingImage');
+    var newX = Math.floor(Math.random() * (window.innerWidth - image.width));
+    var newY = Math.floor(Math.random() * (window.innerHeight - image.height));
+    
+    image.style.transform = 'translate(' + newX + 'px, ' + newY + 'px)';
+  }
+</script>
+
+</body>
+</html>
